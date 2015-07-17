@@ -98,6 +98,7 @@ void draw ()
     } 
     if (!checkend)
     {
+      fill (191);
       for (int a=0;a<50;a++)
       {
         for (int b=0;b<50;b++)
@@ -106,7 +107,6 @@ void draw ()
           {
             if (a!=dx || b!=dy)
             {
-              fill (191);
               rect (a*10,b*10,10,10);
             }  
           }  
@@ -115,14 +115,14 @@ void draw ()
     }
     if (checkend)
     {
+      stroke (255,0,0);
+      strokeWeight (4);
       for (int a=0;a<50;a++)
       {
         for (int b=0;b<50;b++)
         {
           if (j[a][b]==0 && !i[a][b])
           {
-            stroke (255,0,0);
-            strokeWeight (4);
             line (a*10,b*10,a*10+10,b*10+10);
             line (a*10,b*10+10,a*10+10,b*10);
           }  
@@ -171,23 +171,29 @@ void draw ()
         }   
         way [k][l]=true;
       }
-      if (k==sx && l==sy)
-      {
-        fill (255);
-        rect (0,500,400,100);
-        fill (0);
-        textSize (100);
-        text ("MIN:"+j[49][49],0,600);
-      }  
+     if (k==sx && l==sy)
+     {
+       stroke (255,127,127);
+       strokeWeight (0);
+       fill (255);
+       rect (0,500,400,100);
+       fill (0);
+       textSize (100);
+       text ("MIN:"+j[49][49],0,600);
+     }  
     } 
     else if (checkend)
     {
+      stroke (255,127,127);
+      strokeWeight (0);
       fill (255);
       rect (0,500,400,100);
       fill (0);
       textSize (100);
       text ("NO WAY",0,600);
     }    
+    stroke (255,127,127);
+    strokeWeight (0);
     fill (0,127,127);
     rect (400,500,100,100);
     fill (255,63,63);
@@ -289,7 +295,7 @@ void draw ()
       {
         for (int b=0;b<50;b++)
         {
-          k=int (random(0,6));
+          k=int (random(0,4));
           if (k==0)
           {
             i[a][b]=true;
