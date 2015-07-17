@@ -129,7 +129,8 @@ void draw ()
         } 
       }   
     }  
-    noStroke ();
+    stroke (255,127,127);
+    strokeWeight (0);
     if (checkend && j[dx][dy]>0)
     {
       fill (255,127,127);
